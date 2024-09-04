@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <nav class="barra_de_menu">
+        <button id="unique-btn" class="glow-on-hover" type="button">
+            <img src="../Arquivos/logo.png" width="25" height="25" alt="Logo">
+        </button>      
+        <button class="glow-on-hover" type="button" onclick="window.location.href='index.html'">Pagina Inicial</button>
+        <button class="glow-on-hover" type="button">Quem Somos</button>
+        <button class="glow-on-hover" type="button">Contatos</button>
+        <button class="glow-on-hover" type="button" onclick="window.location.href='carrinho.html'">Carrinho</button>
+    </nav>
+    
+    <div class="content">
+        <h1>Carrinho de Compras</h1>
+        <div id="carrinho-container">
+            <!-- Itens do carrinho serão carregados dinamicamente aqui -->
+        </div>
+        <div id="total-container">
+            <h2>Total: R$ <span id="total">0.00</span></h2>
+        </div>
+        
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

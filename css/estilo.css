@@ -1,0 +1,190 @@
+/* Reset básico para margens e preenchimento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilizando o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f52a0750;
+    color: #fff;
+   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Estilizando a barra de menu */
+.barra_de_menu {
+    background-color: #e99595;
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #333;
+}
+
+.barra_de_menu button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.barra_de_menu img {
+    vertical-align: middle;
+}
+
+.barra_de_menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.barra_de_menu li {
+    margin: 0 15px;
+}
+
+.barra_de_menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.barra_de_menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilizando a seção de produtos */
+#produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.produto {
+    background-color: #222; /* Fundo mais escuro para destaque */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #333;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.produto h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #00ffd5; /* Destaque para o nome do produto */
+}
+
+.produto p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #bbb; /* Texto mais claro para a descrição */
+}
+
+.produto p:last-of-type {
+    font-weight: bold;
+    color: #7a00ff;
+}
+
+/* Botão com efeito de glow */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/* Estilizando o contêiner de botões */
+.botao-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

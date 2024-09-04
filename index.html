@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome da Loja</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <nav class="barra_de_menu">
+        <button id="unique-btn" class="glow-on-hover" type="button">
+            <img src="logo.png" width="25" height="25" alt="Logo">
+        </button>      
+        <button class="glow-on-hover" type="button">Pagina Inicial</button>
+        <button class="glow-on-hover" type="button">Quem Somos</button>
+        <button class="glow-on-hover" type="button">Contatos</button>
+        <button class="glow-on-hover" type="button" onclick="window.location.href='carrinho.html'">Carrinho</button>
+    </nav>
+    
+    <div class="content">
+        <div id="produtos-container">
+            <!-- Produtos serão carregados dinamicamente aqui -->
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
