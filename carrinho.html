@@ -19,17 +19,15 @@
     </nav>
     
     <div class="content">
-        <div class="content">
-            <h1 class="animate__animated animate__bounceIn">Carrinho de Compras</h1>
-            <div id="carrinho-container">
-                <!-- Itens do carrinho serão carregados dinamicamente aqui -->
-            </div>
+        <h1 class="animate__animated animate__bounceIn">Carrinho de Compras</h1>
+        <div id="carrinho-container">
+            <!-- Itens do carrinho serão carregados dinamicamente aqui -->
         </div>
-        <div id="total-container">
-            <h2>Total: R$ <span id="total">0.00</span></h2>
+        <div id="total-container" style="display: none;">
+            <h2>Total: <span id="total">0.00</span></h2>
+            <button id="fazer-pagamento" class="glow-on-hover" onclick="fazerPagamento()">Fazer Pagamento</button>
         </div>
-        <button id="finalizar-compra" class="glow-on-hover" onclick="finalizarCompra()">Finalizar Compra</button>
-    </div>      
+        
         <div class="mensagem-vazio-container">
             <div id="mensagem-vazio" style="display:none;">
                 <p>O seu carrinho está vazio.</p>
@@ -37,10 +35,6 @@
                 <button class="glow-on-hover" type="button" onclick="window.location.href='index.html'">Continuar Comprando</button>
             </div>
         </div>
-        <div id="total-container">
-            <h2>Total: R$ <span id="total">0.00</span></h2>
-        </div>
-        <button id="finalizar-compra" class="glow-on-hover" onclick="finalizarCompra()">Finalizar Compra</button>
     </div>
 
     <script src="js/script.js"></script>

@@ -1,0 +1,167 @@
+/* Reset básico para margens e preenchimento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilizando o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 60px; /* Espaço para a barra de menu */
+}
+
+/* Estilizando a barra de menu */
+.barra_de_menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #555;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Para garantir que a barra fique acima de outros elementos */
+}
+
+.barra_de_menu button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.barra_de_menu button img {
+    vertical-align: middle;
+}
+
+.barra_de_menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.barra_de_menu li {
+    margin: 0 10px;
+}
+
+.barra_de_menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.barra_de_menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilizando o conteúdo da página */
+.content {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#resumo-compra, #calculo-frete, #opcoes-pagamento {
+    margin-bottom: 20px;
+}
+
+#resumo-compra p {
+    font-size: 1.2em;
+    color: #f52a07;
+    text-align: center;
+}
+
+#calculo-frete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#calculo-frete label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#calculo-frete input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#calculo-frete button {
+    background-color: #f52a07;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#calculo-frete button:hover {
+    background-color: #d42a07;
+}
+
+#opcoes-pagamento h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #f52a07;
+    text-align: center;
+}
+
+#opcoes-pagamento label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#opcoes-pagamento input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Botão Finalizar Compra */
+button[type="button"], button[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button[type="button"]:hover, button[type="submit"]:hover {
+    background-color: #d42a07;
+}
+
+button[type="button"]:active, button[type="submit"]:active {
+    background-color: #a52700;
+}

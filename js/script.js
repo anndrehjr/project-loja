@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.endsWith('carrinho.html')) {
+    const pathname = window.location.pathname;
+
+    if (pathname.endsWith('carrinho.html')) {
         carregarCarrinho();
-    } else if (window.location.pathname.endsWith('index.html')) {
+    } else if (pathname.endsWith('index.html')) {
         carregarProdutos();
-    } else if (window.location.pathname.endsWith('pagamento.html')) {
-        // Adicione um código específico para a página de pagamento, se necessário
+    } else if (pathname.endsWith('pagamento.html')) {
+        carregarTotalCompra();
     }
 });
 
@@ -52,15 +54,17 @@ function carregarCarrinho() {
             const container = document.getElementById('carrinho-container');
             const totalContainer = document.getElementById('total');
             const mensagemVazio = document.getElementById('mensagem-vazio');
+            const totalDiv = document.getElementById('total-container');
             let total = 0;
             
             container.innerHTML = '';
             if (carrinho.length === 0) {
                 mensagemVazio.style.display = 'block';
-                document.getElementById('finalizar-compra').style.display = 'none'; // Esconde o botão
+                totalDiv.style.display = 'none';
             } else {
                 mensagemVazio.style.display = 'none';
-                document.getElementById('finalizar-compra').style.display = 'block'; // Mostra o botão
+                totalDiv.style.display = 'block';
+                
                 carrinho.forEach(item => {
                     let preco = parseFloat(item.preco.replace('R$ ', '').replace(',', '.'));
                     total += preco * item.quantidade;
@@ -71,11 +75,11 @@ function carregarCarrinho() {
                         <p>Preço: ${item.preco}</p>
                         <p>Quantidade: ${item.quantidade}</p>
                         <button class="glow-on-hover" type="button" onclick="removerDoCarrinho('${item.nome}')">Remover</button>
-
                     `;
                     container.appendChild(itemDiv);
                 });
                 totalContainer.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+                localStorage.setItem('totalCarrinho', total.toFixed(2));
             }
         })
         .catch(error => console.error('Erro ao carregar carrinho:', error));
@@ -92,18 +96,11 @@ function removerDoCarrinho(nome) {
     .then(response => response.text())
     .then(message => {
         alert(message);
-        carregarCarrinho(); // Recarrega o carrinho após a remoção do item
+        carregarCarrinho();
     })
     .catch(error => console.error('Erro ao remover do carrinho:', error));
 }
 
-function processarPagamento(tipo) {
-    // Processa o tipo de pagamento escolhido
-    console.log('Pagamento selecionado:', tipo);
-    // Redireciona ou exibe um formulário conforme o tipo de pagamento
-    // Isso pode ser usado para preparar um formulário ou redirecionar para uma página específica de pagamento
-}
-
-function finalizarCompra() {
+function fazerPagamento() {
     window.location.href = 'pagamento.html';
 }
