@@ -15,14 +15,14 @@ body {
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    padding-top: 60px; /* Espaço para a barra de menu */
+    padding-top: 80px; /* Espaço para a barra de menu fixa */
 }
 
 /* Estilizando a barra de menu */
 .barra_de_menu {
     background-color: #333;
     color: #fff;
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -41,10 +41,13 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin: 0 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
 }
 
-.barra_de_menu button img {
-    vertical-align: middle;
+.barra_de_menu button:hover {
+    background-color: #444; /* Cor de fundo ao passar o mouse */
+    border-radius: 5px;
 }
 
 .barra_de_menu ul {
@@ -85,10 +88,6 @@ body {
     text-align: center;
 }
 
-#resumo-compra, #calculo-frete, #opcoes-pagamento {
-    margin-bottom: 20px;
-}
-
 #resumo-compra p {
     font-size: 1.2em;
     color: #f52a07;
@@ -107,7 +106,8 @@ body {
 }
 
 #calculo-frete input[type="text"] {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -122,6 +122,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 #calculo-frete button:hover {
@@ -153,6 +154,7 @@ button[type="button"], button[type="submit"] {
     color: #fff;
     cursor: pointer;
     font-size: 16px;
+    background-color: #f52a07;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     margin-top: 20px;
