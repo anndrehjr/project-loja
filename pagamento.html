@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <nav class="barra_de_menu">
+        <button id="unique-btn" class="glow-on-hover" type="button">
+            <img src="logo.png" width="25" height="25" alt="Logo">
+        </button>      
+        <button class="glow-on-hover" type="button" onclick="window.location.href='index.html'">Página Inicial</button>
+        <button class="glow-on-hover" type="button">Quem Somos</button>
+        <button class="glow-on-hover" type="button">Contatos</button>
+        <button class="glow-on-hover" type="button" onclick="window.location.href='carrinho.html'">Carrinho</button>
+    </nav>
+
+    <div class="pagamento-container">
+        <h1>Formas de Pagamento</h1>
+        <div class="desconto">Desconto de 15% em todas as formas de pagamento!</div>
+        <div class="opcao-pagamento" onclick="processarPagamento('credito')">Crédito</div>
+        <div class="opcao-pagamento" onclick="processarPagamento('debito')">Débito</div>
+        <div class="opcao-pagamento" onclick="processarPagamento('pix')">PIX</div>
+        <button class="botao-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+</body>
+</html>

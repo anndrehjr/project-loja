@@ -10,7 +10,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f52a0750;
     color: #fff;
-   
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -165,26 +164,167 @@ body {
     100% { background-position: 0 0; }
 }
 
-
-/* Estilizando o contêiner de botões */
-.botao-container {
+/* Estilos para a página de pagamento */
+.pagamento-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Espaçamento entre os botões */
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
 }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+.opcao-pagamento {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
     cursor: pointer;
-    background-color: #007BFF;
+    transition: background-color 0.3s ease;
+}
+
+.opcao-pagamento:hover {
+    background-color: #f0f0f0;
+}
+
+/* Atualizando o botão de finalizar compra para usar o estilo glow */
+.botao-finalizar {
+    width: 220px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste a altura conforme necessário */
+    border: none;
+    outline: none;
     color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+.botao-finalizar:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.botao-finalizar:active {
+    color: #000;
+}
+
+.botao-finalizar:active:after {
+    background: transparent;
+}
+
+.botao-finalizar:hover:before {
+    opacity: 1;
+}
+
+.botao-finalizar:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/* Estilo para o contêiner da mensagem vazia */
+.mensagem-vazio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Ajuste a altura mínima conforme necessário */
+    text-align: center;
+    margin-top: 5vh; /* Adiciona um pouco de espaço do topo */
+}
+
+#mensagem-vazio p {
+    margin: 10px 0;
+    font-size: 2em; /* Tamanho da fonte aumentado */
+    color: #000; /* Cor do texto preta */
+    font-weight: bold; /* Negrito */
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-top: 20px; /* Espaço adicional entre o texto e o botão */
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+.content h1 {
+    color: #000; /* Define a cor do texto como preto */
+}
+#total-container h2 {
+    color: #000; /* Define a cor do texto como preto */
+}
+
+#total-container #total {
+    color: #000; /* Define a cor do texto como preto, para o valor total */
 }
